@@ -1,0 +1,15 @@
+#!/bin/env bash
+
+set -eux
+
+if [[ $# -ne 1 ]]; then
+	src=/run/media/$USER/CIRCUITPY
+else
+	src=$1
+fi
+
+dst=./alicion
+
+cp -r $src/* $dst
+rm -f ./alicion/boot_out.txt
+rm -rf ./alicion/System\ Volume\ Information

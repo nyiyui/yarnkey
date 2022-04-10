@@ -29,7 +29,7 @@ def index(a: list, v) -> int:
             return str(i)
     return '-'
 
-print('meta {"version":"alicion-v2.7","board":"'+board.board_id+'"}')
+print('meta {"version":"alicion-v2.8","board":"'+board.board_id+'"}')
 
 with Volt((board.A0, board.A1, board.A2, board.A3, board.A4, board.D2)) as first:
     with Keyboard(dry_run=False, keys=keys) as out:
