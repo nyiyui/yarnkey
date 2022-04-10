@@ -13,3 +13,4 @@ dst=./alicion
 cp -r $src/* $dst
 rm -f ./alicion/boot_out.txt
 rm -rf ./alicion/System\ Volume\ Information
+rm -rf ./alicion/__pycache__
