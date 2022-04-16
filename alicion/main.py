@@ -13,6 +13,7 @@ from simple import in_range, Timeout
 #from directional import Directional
 import adafruit_dotstar
 from data import keys
+from settings import *
 
 
 led = adafruit_dotstar.DotStar(board.APA102_SCK, board.APA102_MOSI, 1, brightness=0.2)
@@ -20,8 +21,8 @@ d = {'o': True, '.': False}
 ds = {True: 'o', False: '.'}
 
 
-r = in_range([(-1, 40e3)]*6)
-to = Timeout(100 * 1e6)
+r = in_range(IN_RANGE_THRESHOLDS)
+to = Timeout(TIMEOUT_THRESHOLD)
 
 def index(a: list, v) -> int:
     for i in range(len(a)):
@@ -29,9 +30,9 @@ def index(a: list, v) -> int:
             return str(i)
     return '-'
 
-print('meta {"version":"alicion-v2.8","board":"'+board.board_id+'"}')
+print('meta {"version":"alicion-v2.9","board":"'+board.board_id+'"}')
 
-with Volt((board.A0, board.A1, board.A2, board.A3, board.A4, board.D2)) as first:
+with Volt(VOLT_PINS) as first:
     with Keyboard(dry_run=False, keys=keys) as out:
         gc.collect()
         led[0] = (255, 0, 0)

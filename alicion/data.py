@@ -89,12 +89,12 @@ keys = {
     (5, 4, 2, 1, 0): [Keycode.Z],
     (3, 2): [Keycode.SPACE],
     (2, 3): [Keycode.SPACE],
-    (4, 2, 0): [Keycode.ENTER],
-    (2, 4, 0): [Keycode.ENTER],
+    #(4, 2, 0): [Keycode.ENTER],
+    #(2, 4, 0): [Keycode.ENTER],
     (2, 0): [Keycode.ENTER],
     (0, 2): [Keycode.ENTER],
     (4, 5): [Keycode.BACKSPACE],
     (5, 4): [Keycode.BACKSPACE],
-    (3, 2, 0, 1): [Keycode.PERIOD],
+    #(3, 2, 0, 1): [Keycode.PERIOD],
 }
 
