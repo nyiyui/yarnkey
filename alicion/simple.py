@@ -15,21 +15,21 @@ class Timeout:
         self.__reset()
 
     def __reset(self):
-        self.pressed = set()
-        self.res = []
+        self.p = set()
+        self.po = []
         self.elapsed = 0
 
     def __call__(self, dt, values):
         if self.elapsed > self.time_threshold:
-            ret = tuple(self.res)
+            ret = tuple(self.po)
             self.__reset()
             return len(ret) > 0, self.elapsed, ret
 
         for i, value in enumerate(values):
-            if value and i not in self.pressed:
+            if value and i not in self.p:
                 self.elapsed = 0
-                self.pressed.add(i)
-                self.res.append(i)
+                self.p.add(i)
+                self.po.append(i)
         if not any(values):
             self.elapsed += dt # incr time if not touching
 
