@@ -1,0 +1,1 @@
+nix-shell -p gnumake python3 python3Packages.dateutil python3Packages.diff-match-patch
